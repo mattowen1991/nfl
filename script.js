@@ -43,25 +43,28 @@ function updateLeaderboard() {
     });
 }
 
-// Display weekly scores
-function displayWeeklyScores() {
-    const weeklyScoresContent = document.getElementById('weeklyScoresContent');
-    weeklyScoresContent.innerHTML = '';
-
-    // Determine the number of weeks
-    const totalWeeks = Math.max(...players.map(player => Math.max(...Object.keys(player.weeklyScores))));
+// Create collapsible weekly scores
+function createCollapsibleSections() {
+    const container = document.getElementById('collapsibleScores');
+    const totalWeeks = 18;
 
     for (let week = 1; week <= totalWeeks; week++) {
-        const weekDiv = document.createElement('div');
-        weekDiv.classList.add('week');
-        weekDiv.innerHTML = `<h3>Week ${week}</h3>`;
+        const button = document.createElement('button');
+        button.classList.add('collapsible');
+        button.textContent = `Week ${week}`;
 
-        players.forEach(player => {
-            const score = player.weeklyScores[week] || 0;
-            weekDiv.innerHTML += `<p>${player.name}: ${score}</p>`;
-        });
+        const content = document.createElement('div');
+        content.classList.add('content');
+        content.innerHTML = players.map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`).join('');
 
-        weeklyScoresContent.appendChild(weekDiv);
+        button.onclick = function () {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        };
+
+        container.appendChild(button);
+        container.appendChild(content);
     }
 }
 
@@ -87,5 +90,5 @@ function displayPlayerStats() {
 
 // Initial render
 updateLeaderboard();
-displayWeeklyScores();
+createCollapsibleSections();
 displayPlayerStats();
