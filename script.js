@@ -2,43 +2,43 @@
 const players = [
     {
         name: "Matt",
-        picture: "Assets/john.jpg",
-        weeklyScores: { 7: 6, 2: 3, 6: 10, 7: 5, 7: 4, 7: 5, 15: 6, 9: 5, 5: 5 }
+        picture: "Assets/matt.jpg",
+        weeklyScores: { 1: 7, 2: 6, 3: 2, 4: 3, 5: 6, 6: 10, 7: 7, 8: 5, 9: 7, 10: 4, 11: 7, 12: 5, 13: 15, 14: 6, 15: 9, 16: 5, 17: 5, 18: 5 }
     },
     {
         name: "Jarv",
-        picture: "Assets/jane.jpg",
-        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+        picture: "Assets/jarv.jpg",
+        weeklyScores: { 1: 6, 2: 4, 3: 2, 4: 5, 5: 7, 6: 10, 7: 6, 8: 5, 9: 6, 10: 5, 11: 6, 12: 5, 13: 9, 14: 6, 15: 6, 16: 5, 17: 5, 18: 5 }
     },
     {
         name: "Gaz",
-        picture: "Assets/alex.jpg",
-        weeklyScores: { 1: 8, 2: 10, 3: 9, 4: 6 }
+        picture: "Assets/gaz.jpg",
+        weeklyScores: { 1: 6, 2: 3, 3: 4, 4: 5, 5: 7, 6: 5, 7: 7, 8: 4, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 6, 15: 9, 16: 5, 17: 4, 18: 2 }
     },
     {
         name: "Joe",
-        picture: "Assets/jane.jpg",
-        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+        picture: "Assets/joe.jpg",
+        weeklyScores: { 1: 5, 2: 1, 3: 4, 4: 4, 5: 6, 6: 7, 7: 6, 8: 5, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 5, 15: 5, 16: 5, 17: 4, 18: 4 }
     },
     {
         name: "Ben",
-        picture: "Assets/jane.jpg",
-        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+        picture: "Assets/ben.jpg",
+        weeklyScores: { 1: 6, 2: 5, 3: 3, 4: 3, 5: 6, 6: 7, 7: 7, 8: 5, 9: 6, 10: 4, 11: 7, 12: 6, 13: 15, 14: 6, 15: 6, 16: 5, 17: 4, 18: 5 }
     },
     {
         name: "Coley",
-        picture: "Assets/jane.jpg",
-        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+        picture: "Assets/coley.jpg",
+        weeklyScores: { 1: 4, 2: 5, 3: 3, 4: 4, 5: 4, 6: 4, 7: 5, 8: 4, 9: 4, 10: 4, 11: 6, 12: 5, 13: 9, 14: 9, 15: 9, 16: 6, 17: 3, 18: 6 }
     },
     {
         name: "Mark",
-        picture: "Assets/jane.jpg",
-        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+        picture: "Assets/mark.jpg",
+        weeklyScores: { 1: 7, 2: 4, 3: 2, 4: 3, 5: 5, 6: 7, 7: 7, 8: 5, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 6, 15: 9, 16: 5, 17: 3, 18: 4 }
     },
     {
         name: "Ste",
-        picture: "Assets/jane.jpg",
-        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+        picture: "Assets/ste.jpg",
+        weeklyScores: { 1: 5, 2: 4, 3: 3, 4: 2, 5: 5, 6: 7, 7: 7, 8: 4, 9: 5, 10: 6, 11: 5, 12: 4, 13: 11, 14: 6, 15: 6, 16: 5, 17: 4, 18: 0 }
     }
 ];
 
