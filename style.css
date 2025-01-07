@@ -86,17 +86,27 @@ footer {
     background: #F2AA4C;
     color: #101820;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 20px; /* Adjust padding for a consistent size */
     margin: 5px; /* Add margin for spacing between buttons */
     border: none;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
     display: inline-block; /* Ensure buttons are neatly aligned */
+    width: 120px; /* Set a fixed width for all buttons */
+    height: 50px; /* Set a fixed height for consistent sizing */
+    line-height: 30px; /* Center-align text vertically */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover and press effects */
 }
 
 .collapsible:hover {
     background: #D9923A;
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+.collapsible:active {
+    transform: scale(1); /* Prevent buttons from increasing size when pressed */
 }
 
 .content {
