@@ -17,6 +17,12 @@ const players = [
     }
 ];
 
+// Hardcoded current winner and loser
+const currentSeason = {
+    winner: { name: "Matt", picture: "Assets/matt.jpg" },
+    loser: { name: "Ste", picture: "Assets/ste.jpg" }
+};
+
 // Calculate total scores for leaderboard
 players.forEach(player => {
     player.totalScore = Object.values(player.weeklyScores).reduce((a, b) => a + b, 0);
@@ -68,29 +74,42 @@ function createCollapsibleSections() {
     }
 }
 
-// Display player statistics
-function displayPlayerStats() {
-    const playerStatsContent = document.getElementById('playerStatsContent');
-    playerStatsContent.innerHTML = '';
+// Display season highlight (winner and loser)
+function displaySeasonHighlight() {
+    const seasonHighlightContainer = document.getElementById('season-highlight');
 
-    players.forEach(player => {
-        const playerDiv = document.createElement('div');
-        playerDiv.classList.add('player-stats');
-        playerDiv.innerHTML = `
-            <img src="${player.picture}" alt="${player.name}" class="player-pic">
-            <h3>${player.name}</h3>
-            <p>Total Score: ${player.totalScore}</p>
-            <p>Weekly Scores: ${Object.entries(player.weeklyScores)
-                .map(([week, score]) => `Week ${week}: ${score}`)
-                .join(', ')}</p>
-        `;
-        playerStatsContent.appendChild
+    // Add winner
+    const winnerHTML = `
+        <div class="highlight-item">
+            <h3>Winner</h3>
+            <div class="framed-pic winner">
+                <img src="${currentSeason.winner.picture}" alt="${currentSeason.winner.name}">
+            </div>
+            <p>${currentSeason.winner.name}</p>
+        </div>
+    `;
 
-(playerDiv);
-    });
+    // Add loser
+    const loserHTML = `
+        <div class="highlight-item">
+            <h3>Wooden Spoon</h3>
+            <div class="framed-pic loser">
+                <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
+            </div>
+            <p>${currentSeason.loser.name}</p>
+        </div>
+    `;
+
+    // Render both winner and loser side by side
+    seasonHighlightContainer.innerHTML = `
+        <div class="highlight-container">
+            ${winnerHTML}
+            ${loserHTML}
+        </div>
+    `;
 }
 
 // Initial render
 updateLeaderboard();
 createCollapsibleSections();
-displayPlayerStats();
+displaySeasonHighlight();
