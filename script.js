@@ -2,17 +2,17 @@
 const players = [
     {
         name: "John Doe",
-        picture: "Assets/john.jpg",
+        picture: "john.jpg",
         weeklyScores: { 1: 10, 2: 15, 3: 12, 4: 8 }
     },
     {
         name: "Jane Smith",
-        picture: "Assets/jane.jpg",
+        picture: "jane.jpg",
         weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
     },
     {
         name: "Alex Johnson",
-        picture: "Assets/alex.jpg",
+        picture: "alex.jpg",
         weeklyScores: { 1: 8, 2: 10, 3: 9, 4: 6 }
     }
 ];
@@ -84,4 +84,11 @@ function displayPlayerStats() {
                 .map(([week, score]) => `Week ${week}: ${score}`)
                 .join(', ')}</p>
         `;
-        player
+        playerStatsContent.appendChild(playerDiv);
+    });
+}
+
+// Initial render
+updateLeaderboard();
+createCollapsibleSections();
+displayPlayerStats();
