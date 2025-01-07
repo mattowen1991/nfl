@@ -117,7 +117,7 @@ function displaySeasonHighlight() {
     // Add loser
     const loserHTML = `
         <div class="highlight-item">
-            <h3>Current Wooden Spoon Holder!</h3>
+            <h3>🥄 Current Wooden Spoon Holder!</h3>
             <div class="framed-pic loser">
                 <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
             </div>
