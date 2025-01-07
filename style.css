@@ -132,6 +132,17 @@ footer {
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
+    .collapsible {
+        padding: 15px; /* Increase tap area */
+        font-size: 1rem; /* Slightly larger text for readability */
+        text-align: center; /* Center-align for smaller screens */
+    }
+
+    .content {
+        padding: 15px; /* Add padding for better readability */
+        font-size: 0.9rem; /* Adjust content font size for mobile */
+    }
+}
     main {
         padding: 10px;
     }
