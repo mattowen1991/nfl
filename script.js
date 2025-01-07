@@ -3,7 +3,7 @@ const players = [
     {
         name: "Matt",
         picture: "Assets/john.jpg",
-        weeklyScores: { 1: 10, 2: 15, 3: 12, 4: 8 }
+        weeklyScores: { 7: 6, 2: 3, 6: 10, 7: 5, 7: 4, 7: 5, 15: 6, 9: 5, 5: 5 }
     },
     {
         name: "Jarv",
