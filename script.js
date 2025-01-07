@@ -32,13 +32,13 @@ function updateLeaderboard() {
 
     sortedPlayers.forEach(player => {
         const row = document.createElement('tr');
-        row.innerHTML = 
+        row.innerHTML = `
             <td>
                 <img src="${player.picture}" alt="${player.name}" class="player-pic">
                 ${player.name}
             </td>
             <td>${player.totalScore}</td>
-        ;
+        `;
         tbody.appendChild(row);
     });
 }
@@ -51,11 +51,11 @@ function createCollapsibleSections() {
     for (let week = 1; week <= totalWeeks; week++) {
         const button = document.createElement('button');
         button.classList.add('collapsible');
-        button.textContent = Week ${week};
+        button.textContent = `Week ${week}`;
 
         const content = document.createElement('div');
         content.classList.add('content');
-        content.innerHTML = players.map(player => <p>${player.name}: ${player.weeklyScores[week] || 0}</p>).join('');
+        content.innerHTML = players.map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`).join('');
 
         button.onclick = function () {
             this.classList.toggle('active');
@@ -76,14 +76,14 @@ function displayPlayerStats() {
     players.forEach(player => {
         const playerDiv = document.createElement('div');
         playerDiv.classList.add('player-stats');
-        playerDiv.innerHTML = 
+        playerDiv.innerHTML = `
             <img src="${player.picture}" alt="${player.name}" class="player-pic">
             <h3>${player.name}</h3>
             <p>Total Score: ${player.totalScore}</p>
             <p>Weekly Scores: ${Object.entries(player.weeklyScores)
-                .map(([week, score]) => Week ${week}: ${score})
+                .map(([week, score]) => `Week ${week}: ${score}`)
                 .join(', ')}</p>
-        ;
+        `;
         playerStatsContent.appendChild(playerDiv);
     });
 }
