@@ -1,52 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NFL League Tracker</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="Assets/nfl-logo.png" alt="NFL Logo">
+<main>
+    <section id="season-awards" class="card">
+        <h2>Season Awards</h2>
+        <div class="awards">
+            <div>
+                <h3>Winners</h3>
+                <div id="winners">
+                    <!-- Winners will be dynamically added here -->
+                </div>
+            </div>
+            <div>
+                <h3>Wooden Spoon</h3>
+                <div id="losers">
+                    <!-- Losers will be dynamically added here -->
+                </div>
+            </div>
         </div>
-        <h1>NFL League Tracker</h1>
-        <p>Track weekly scores and see who's leading!</p>
-    </header>
-    <main>
-        <section id="leaderboard" class="card">
-            <h2>Leaderboard</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Total Score</th>
-                    </tr>
-                </thead>
-                <tbody id="leaderboardBody">
-                    <!-- Dynamic rows will be added here -->
-                </tbody>
-            </table>
-        </section>
+    </section>
 
-        <section id="weekly-scores" class="card">
-            <h2>Weekly Scores</h2>
-            <div id="collapsibleScores">
-                <!-- Collapsible sections will be added dynamically -->
-            </div>
-        </section>
+    <section id="leaderboard" class="card">
+        <h2>Leaderboard</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Total Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+                <!-- Dynamic rows will be added here -->
+            </tbody>
+        </table>
+    </section>
 
-        <section id="player-stats" class="card">
-            <h2>Player Statistics</h2>
-            <div id="playerStatsContent">
-                <!-- Player statistics will appear here -->
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 NFL League Tracker. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+    <section id="weekly-scores" class="card">
+        <h2>Weekly Scores</h2>
+        <div id="collapsibleScores">
+            <!-- Collapsible sections will be added dynamically -->
+        </div>
+    </section>
+
+    <section id="player-stats" class="card">
+        <h2>Player Statistics</h2>
+        <div id="playerStatsContent">
+            <!-- Player statistics will appear here -->
+        </div>
+    </section>
+</main>
