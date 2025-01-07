@@ -106,7 +106,7 @@ function displaySeasonHighlight() {
     // Add winner
     const winnerHTML = `
         <div class="highlight-item">
-            <h3>Winner</h3>
+            <h3>2024 Season Winner!</h3>
             <div class="framed-pic winner">
                 <img src="${currentSeason.winner.picture}" alt="${currentSeason.winner.name}">
             </div>
@@ -117,7 +117,7 @@ function displaySeasonHighlight() {
     // Add loser
     const loserHTML = `
         <div class="highlight-item">
-            <h3>Wooden Spoon</h3>
+            <h3>Current Wooden Spoon Holder!</h3>
             <div class="framed-pic loser">
                 <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
             </div>
