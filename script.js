@@ -5,12 +5,10 @@ let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || {};
 document.getElementById('scoreForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Get form values
     const playerName = document.getElementById('playerName').value;
     const weekNumber = parseInt(document.getElementById('weekNumber').value);
     const score = parseInt(document.getElementById('score').value);
 
-    // Add score to leaderboard
     if (!leaderboard[playerName]) {
         leaderboard[playerName] = { total: 0, weeks: {} };
     }
@@ -18,26 +16,21 @@ document.getElementById('scoreForm').addEventListener('submit', function (e) {
     leaderboard[playerName].weeks[weekNumber] = score;
     leaderboard[playerName].total = Object.values(leaderboard[playerName].weeks).reduce((a, b) => a + b, 0);
 
-    // Save to localStorage
     localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 
-    // Update displays
     updateLeaderboard();
     updatePlayerStats();
 
-    // Clear form
     e.target.reset();
 });
 
 // Update leaderboard table
 function updateLeaderboard() {
     const tbody = document.getElementById('leaderboardBody');
-    tbody.innerHTML = ''; // Clear current rows
+    tbody.innerHTML = '';
 
-    // Sort players by total score
     const sortedPlayers = Object.entries(leaderboard).sort((a, b) => b[1].total - a[1].total);
 
-    // Add rows to the table
     sortedPlayers.forEach(([playerName, data]) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -48,13 +41,14 @@ function updateLeaderboard() {
     });
 }
 
-// Update player statistics section
+// Update player statistics
 function updatePlayerStats() {
     const playerStatsContent = document.getElementById('playerStatsContent');
-    playerStatsContent.innerHTML = ''; // Clear current content
+    playerStatsContent.innerHTML = '';
 
     Object.entries(leaderboard).forEach(([playerName, data]) => {
         const playerDiv = document.createElement('div');
+        playerDiv.classList.add('card');
         playerDiv.innerHTML = `
             <h3>${playerName}</h3>
             <p>Total Score: ${data.total}</p>
@@ -66,6 +60,13 @@ function updatePlayerStats() {
     });
 }
 
-// Initial render
+// Reset data
+document.getElementById('resetData').addEventListener('click', () => {
+    localStorage.clear();
+    leaderboard = {};
+    updateLeaderboard();
+    updatePlayerStats();
+});
+
 updateLeaderboard();
 updatePlayerStats();
