@@ -1,19 +1,44 @@
 // Hardcoded player data with weekly scores
 const players = [
     {
-        name: "John Doe",
+        name: "Matt",
         picture: "Assets/john.jpg",
         weeklyScores: { 1: 10, 2: 15, 3: 12, 4: 8 }
     },
     {
-        name: "Jane Smith",
+        name: "Jarv",
         picture: "Assets/jane.jpg",
         weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
     },
     {
-        name: "Alex Johnson",
+        name: "Gaz",
         picture: "Assets/alex.jpg",
         weeklyScores: { 1: 8, 2: 10, 3: 9, 4: 6 }
+    },
+    {
+        name: "Joe",
+        picture: "Assets/jane.jpg",
+        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+    },
+    {
+        name: "Ben",
+        picture: "Assets/jane.jpg",
+        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+    },
+    {
+        name: "Coley",
+        picture: "Assets/jane.jpg",
+        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+    },
+    {
+        name: "Mark",
+        picture: "Assets/jane.jpg",
+        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
+    },
+    {
+        name: "Ste",
+        picture: "Assets/jane.jpg",
+        weeklyScores: { 1: 12, 2: 18, 3: 14, 4: 10 }
     }
 ];
 
