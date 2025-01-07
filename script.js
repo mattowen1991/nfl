@@ -2,42 +2,42 @@
 const players = [
     {
         name: "Matt",
-        picture: "Assets/matt.jpg",
+        picture: "Assets/matt.png",
         weeklyScores: { 1: 7, 2: 6, 3: 2, 4: 3, 5: 6, 6: 10, 7: 7, 8: 5, 9: 7, 10: 4, 11: 7, 12: 5, 13: 15, 14: 6, 15: 9, 16: 5, 17: 5, 18: 5 }
     },
     {
         name: "Jarv",
-        picture: "Assets/jarv.jpg",
+        picture: "Assets/jarv.png",
         weeklyScores: { 1: 6, 2: 4, 3: 2, 4: 5, 5: 7, 6: 10, 7: 6, 8: 5, 9: 6, 10: 5, 11: 6, 12: 5, 13: 9, 14: 6, 15: 6, 16: 5, 17: 5, 18: 5 }
     },
     {
         name: "Gaz",
-        picture: "Assets/gaz.jpg",
+        picture: "Assets/gaz.png",
         weeklyScores: { 1: 6, 2: 3, 3: 4, 4: 5, 5: 7, 6: 5, 7: 7, 8: 4, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 6, 15: 9, 16: 5, 17: 4, 18: 2 }
     },
     {
         name: "Joe",
-        picture: "Assets/joe.jpg",
+        picture: "Assets/joe.png",
         weeklyScores: { 1: 5, 2: 1, 3: 4, 4: 4, 5: 6, 6: 7, 7: 6, 8: 5, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 5, 15: 5, 16: 5, 17: 4, 18: 4 }
     },
     {
         name: "Ben",
-        picture: "Assets/ben.jpg",
+        picture: "Assets/ben.png",
         weeklyScores: { 1: 6, 2: 5, 3: 3, 4: 3, 5: 6, 6: 7, 7: 7, 8: 5, 9: 6, 10: 4, 11: 7, 12: 6, 13: 15, 14: 6, 15: 6, 16: 5, 17: 4, 18: 5 }
     },
     {
         name: "Coley",
-        picture: "Assets/coley.jpg",
+        picture: "Assets/coley.png",
         weeklyScores: { 1: 4, 2: 5, 3: 3, 4: 4, 5: 4, 6: 4, 7: 5, 8: 4, 9: 4, 10: 4, 11: 6, 12: 5, 13: 9, 14: 9, 15: 9, 16: 6, 17: 3, 18: 6 }
     },
     {
         name: "Mark",
-        picture: "Assets/mark.jpg",
+        picture: "Assets/mark.png",
         weeklyScores: { 1: 7, 2: 4, 3: 2, 4: 3, 5: 5, 6: 7, 7: 7, 8: 5, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 6, 15: 9, 16: 5, 17: 3, 18: 4 }
     },
     {
         name: "Ste",
-        picture: "Assets/ste.jpg",
+        picture: "Assets/ste.png",
         weeklyScores: { 1: 5, 2: 4, 3: 3, 4: 2, 5: 5, 6: 7, 7: 7, 8: 4, 9: 5, 10: 6, 11: 5, 12: 4, 13: 11, 14: 6, 15: 6, 16: 5, 17: 4, 18: 0 }
     }
 ];
