@@ -8,11 +8,14 @@
 </head>
 <body>
     <header>
+        <div class="logo">
+            <img src="nfl-logo.png" alt="NFL Logo">
+        </div>
         <h1>NFL League Tracker</h1>
         <p>Pick your winners and track the scores!</p>
     </header>
     <main>
-        <section id="score-input">
+        <section id="score-input" class="card">
             <h2>Enter Weekly Scores</h2>
             <form id="scoreForm">
                 <label for="playerName">Player Name:</label>
@@ -28,7 +31,7 @@
             </form>
         </section>
 
-        <section id="leaderboard">
+        <section id="leaderboard" class="card">
             <h2>Leaderboard</h2>
             <table>
                 <thead>
@@ -43,13 +46,17 @@
             </table>
         </section>
 
-        <section id="player-stats">
+        <section id="player-stats" class="card">
             <h2>Player Statistics</h2>
             <div id="playerStatsContent">
                 <!-- Player stats will appear here -->
             </div>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2025 NFL League Tracker. All rights reserved.</p>
+        <button id="resetData">Reset Data</button>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
