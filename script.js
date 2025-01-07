@@ -44,8 +44,8 @@ const players = [
 
 // Hardcoded current winner and loser
 const currentSeason = {
-    winner: { name: "Matt", picture: "Assets/matt.jpg" },
-    loser: { name: "Ste", picture: "Assets/ste.jpg" }
+    winner: { name: "Matt", picture: "Assets/matt.png" },
+    loser: { name: "Ste", picture: "Assets/ste.png" }
 };
 
 // Calculate total scores for leaderboard
