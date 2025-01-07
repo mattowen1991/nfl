@@ -81,17 +81,18 @@ footer {
     border-top: 3px solid #F2AA4C;
 }
 
-/* Collapsible Sections */
+/* Weekly Scores Section */
 .collapsible {
     background: #F2AA4C;
     color: #101820;
     cursor: pointer;
     padding: 10px;
-    margin-bottom: 5px;
+    margin: 5px; /* Add margin for spacing between buttons */
     border: none;
     border-radius: 5px;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
+    display: inline-block; /* Ensure buttons are neatly aligned */
 }
 
 .collapsible:hover {
@@ -109,6 +110,14 @@ footer {
 
 .active + .content {
     display: block;
+}
+
+/* Weekly Scores Container */
+#collapsibleScores {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: center; /* Center the buttons in the section */
+    gap: 10px; /* Add spacing between rows and columns */
 }
 
 /* Season Highlight Section */
@@ -200,5 +209,9 @@ footer {
     .framed-pic {
         width: 80px;
         height: 80px;
+    }
+
+    #collapsibleScores {
+        gap: 5px; /* Adjust gap for smaller screens */
     }
 }
