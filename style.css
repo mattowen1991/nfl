@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #101820;
     color: #F2AA4C;
     margin: 0;
@@ -10,30 +10,41 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background: #3C3C3C;
+    background: linear-gradient(to right, #4A4E69, #22223B);
     border-bottom: 3px solid #F2AA4C;
 }
 
+header .logo img {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 main {
-    max-width: 800px;
+    max-width: 900px;
     margin: 20px auto;
-    padding: 20px;
+    display: grid;
+    gap: 20px;
+}
+
+.card {
     background: #282C34;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 h2 {
     color: #F2AA4C;
+    text-align: center;
 }
 
 form {
     display: grid;
-    gap: 10px;
+    gap: 15px;
 }
 
 input, button {
@@ -48,6 +59,7 @@ button {
     color: #101820;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s;
 }
 
 button:hover {
@@ -57,12 +69,12 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 th, td {
     text-align: left;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #F2AA4C;
 }
 
@@ -70,12 +82,21 @@ th {
     background: #3C3C3C;
 }
 
-/* Player Stats */
-#playerStatsContent {
-    margin-top: 20px;
-    background: #3C3C3C;
+table tr:hover {
+    background: rgba(242, 170, 76, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
     padding: 10px;
-    border-radius: 5px;
+    background: #22223B;
+    color: #F2AA4C;
+    border-top: 3px solid #F2AA4C;
+}
+
+footer button {
+    margin-top: 10px;
 }
 
 /* Mobile Responsiveness */
@@ -85,11 +106,14 @@ th {
     }
 
     table, th, td {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     input, button {
         font-size: 0.9rem;
-        padding: 8px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
     }
 }
