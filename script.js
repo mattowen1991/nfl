@@ -48,6 +48,14 @@ const currentSeason = {
     loser: { name: "Ste", picture: "Assets/ste.png" }
 };
 
+// Honorary winners data
+const honoraryWinners = [
+    { name: "Matt", year: 2024, picture: "Assets/matt.png" },
+    { name: "Gaz", year: 2023, picture: "Assets/gaz.png" },
+    { name: "Ste", year: 2022, picture: "Assets/ste.png" },
+    { name: "Jarv", year: 2021, picture: "Assets/jarv.png" },
+];
+
 // Calculate total scores for leaderboard
 players.forEach(player => {
     player.totalScore = Object.values(player.weeklyScores).reduce((a, b) => a + b, 0);
@@ -134,7 +142,39 @@ function displaySeasonHighlight() {
     `;
 }
 
+// Display honorary winners
+function displayHonoraryWinners() {
+    const container = document.querySelector('.honorary-container');
+    honoraryWinners.forEach(winner => {
+        const winnerHTML = `
+            <div class="honorary-item">
+                <div class="framed-pic">
+                    <img src="${winner.picture}" alt="${winner.name}">
+                </div>
+                <div class="honorary-banner">
+                    <p>${winner.name} - ${winner.year}</p>
+                </div>
+            </div>
+        `;
+        container.innerHTML += winnerHTML;
+    });
+}
+
+// Create confetti effect for honorary winners
+function createConfetti() {
+    const confettiContainer = document.getElementById('confetti-container');
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDelay = `${Math.random() * 2}s`;
+        confettiContainer.appendChild(confetti);
+    }
+}
+
 // Initial render
 updateLeaderboard();
 createCollapsibleSections();
 displaySeasonHighlight();
+displayHonoraryWinners();
+createConfetti();
