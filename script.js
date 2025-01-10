@@ -1,72 +1,50 @@
-// Hardcoded player data with weekly scores
-const players = [
-    {
-        name: "Matt",
-        picture: "Assets/matt.png",
-        weeklyScores: { 1: 7, 2: 6, 3: 2, 4: 3, 5: 6, 6: 10, 7: 7, 8: 5, 9: 7, 10: 4, 11: 7, 12: 5, 13: 15, 14: 6, 15: 9, 16: 5, 17: 5, 18: 5 }
-    },
-    // Other players omitted for brevity...
-];
-
-// Update leaderboard
-function updateLeaderboard() {
-    const tbody = document.getElementById('leaderboardBody');
-    tbody.innerHTML = '';
-
-    const sortedPlayers = [...players].sort((a, b) => b.totalScore - a.totalScore);
-
-    sortedPlayers.forEach(player => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>
-                <img src="${player.picture}" alt="${player.name}" class="player-pic">
-                ${player.name}
-            </td>
-            <td>${player.totalScore}</td>
-        `;
-        tbody.appendChild(row);
-    });
+/* Honorary Winners Section */
+.honorary-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-// Create collapsible weekly scores
-function createCollapsibleSections() {
-    const container = document.getElementById('collapsibleScores');
-    for (let week = 1; week <= 18; week++) {
-        const button = document.createElement('button');
-        button.classList.add('collapsible');
-        button.textContent = `Week ${week}`;
-
-        const content = document.createElement('div');
-        content.classList.add('content');
-        content.innerHTML = players.map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`).join('');
-
-        button.onclick = () => {
-            button.classList.toggle('active');
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        };
-
-        container.appendChild(button);
-        container.appendChild(content);
-    }
+.honorary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-// Confetti for Honorary Winners
-function createConfetti() {
-    const confettiContainer = document.createElement('div');
-    confettiContainer.id = 'confetti-container';
-    document.getElementById('honorary-winners').appendChild(confettiContainer);
-
-    for (let i = 0; i < 100; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = `${Math.random() * 100}%`;
-        confetti.style.animationDelay = `${Math.random() * 2}s`;
-        confettiContainer.appendChild(confetti);
-    }
+.winner-banner {
+    background-color: #F2AA4C;
+    color: #101820;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-window.onload = () => {
-    updateLeaderboard();
-    createCollapsibleSections();
-    createConfetti();
-};
+/* Confetti */
+#confetti-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #FFD700;
+    animation: fall 3s linear infinite;
+    transform: rotate(45deg);
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100px) rotate(360deg); opacity: 0; }
+}
