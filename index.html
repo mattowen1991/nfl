@@ -1,95 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2024 NFL League Scores!</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="Assets/nfl-logo.png" alt="NFL Logo">
-        </div>
-        <h1>2024 NFL League Scores</h1>
-        <p>NFL League scores updated weekly!</p>
-    </header>
-    <main>
-        <section id="leaderboard" class="card">
-            <h2>Leaderboard</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Total Score</th>
-                    </tr>
-                </thead>
-                <tbody id="leaderboardBody">
-                    <!-- Dynamic rows will be added here -->
-                </tbody>
-            </table>
-        </section>
+/* Honorary Winners Section */
+.honorary-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-        <section id="weekly-scores" class="card">
-            <h2>Weekly Scores</h2>
-            <div id="collapsibleScores">
-                <!-- Collapsible sections will be added dynamically -->
-            </div>
-        </section>
+.honorary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
-        <section id="season-highlight" class="card">
-            <h2>Season Highlight</h2>
-            <div class="highlight-container">
-                <div class="highlight-item">
-                    <h3>2024 Season Winner!</h3>
-                    <div class="framed-pic winner">
-                        <img src="Assets/matt.png" alt="Matt">
-                    </div>
-                    <p>Matt</p>
-                </div>
-                <div class="highlight-item">
-                    <h3>🥄 Current Wooden Spoon Holder!</h3>
-                    <div class="framed-pic loser">
-                        <img src="Assets/ste.png" alt="Ste">
-                    </div>
-                    <p>Ste</p>
-                </div>
-            </div>
-        </section>
+.winner-banner {
+    background-color: #F2AA4C;
+    color: #101820;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-        <section id="honorary-winners" class="card">
-            <h2>Honorary Winners</h2>
-            <div class="honorary-container">
-                <div class="honorary-item">
-                    <div class="framed-pic">
-                        <img src="Assets/matt.png" alt="Matt">
-                    </div>
-                    <div class="winner-banner">2024 - Matt</div>
-                </div>
-                <div class="honorary-item">
-                    <div class="framed-pic">
-                        <img src="Assets/gaz.png" alt="Gaz">
-                    </div>
-                    <div class="winner-banner">2023 - Gaz</div>
-                </div>
-                <div class="honorary-item">
-                    <div class="framed-pic">
-                        <img src="Assets/ste.png" alt="Ste">
-                    </div>
-                    <div class="winner-banner">2022 - Ste</div>
-                </div>
-                <div class="honorary-item">
-                    <div class="framed-pic">
-                        <img src="Assets/jarv.png" alt="Jarv">
-                    </div>
-                    <div class="winner-banner">2021 - Jarv</div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 NFL League Tracker. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+/* Confetti */
+#confetti-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: #FFD700;
+    animation: fall 3s linear infinite;
+    transform: rotate(45deg);
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100px) rotate(360deg); opacity: 0; }
+}
