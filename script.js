@@ -1,3 +1,18 @@
+// Create Confetti Effect
+function createConfetti() {
+    const confettiContainer = document.createElement('div');
+    confettiContainer.id = 'confetti-container';
+    document.body.appendChild(confettiContainer);
+
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = `${Math.random() * 100}%`;
+        confetti.style.animationDelay = `${Math.random() * 2}s`;
+        confettiContainer.appendChild(confetti);
+    }
+}
+
 // Hardcoded player data with weekly scores
 const players = [
     {
@@ -41,12 +56,6 @@ const players = [
         weeklyScores: { 1: 5, 2: 4, 3: 3, 4: 2, 5: 5, 6: 7, 7: 7, 8: 4, 9: 5, 10: 6, 11: 5, 12: 4, 13: 11, 14: 6, 15: 6, 16: 5, 17: 4, 18: 0 }
     }
 ];
-
-// Hardcoded current winner and loser
-const currentSeason = {
-    winner: { name: "Matt", picture: "Assets/matt.png" },
-    loser: { name: "Ste", picture: "Assets/ste.png" }
-};
 
 // Calculate total scores for leaderboard
 players.forEach(player => {
@@ -102,39 +111,29 @@ function createCollapsibleSections() {
 // Display season highlight (winner and loser)
 function displaySeasonHighlight() {
     const seasonHighlightContainer = document.getElementById('season-highlight');
-
-    // Add winner
     const winnerHTML = `
         <div class="highlight-item">
             <h3>2024 Season Winner!</h3>
             <div class="framed-pic winner">
-                <img src="${currentSeason.winner.picture}" alt="${currentSeason.winner.name}">
+                <img src="Assets/matt.png" alt="Matt">
             </div>
-            <p>${currentSeason.winner.name}</p>
-        </div>
-    `;
-
-    // Add loser
+            <p>Matt</p>
+        </div>`;
     const loserHTML = `
         <div class="highlight-item">
             <h3>🥄 Current Wooden Spoon Holder!</h3>
             <div class="framed-pic loser">
-                <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
+                <img src="Assets/ste.png" alt="Ste">
             </div>
-            <p>${currentSeason.loser.name}</p>
-        </div>
-    `;
-
-    // Render both winner and loser side by side
-    seasonHighlightContainer.innerHTML = `
-        <div class="highlight-container">
-            ${winnerHTML}
-            ${loserHTML}
-        </div>
-    `;
+            <p>Ste</p>
+        </div>`;
+    seasonHighlightContainer.innerHTML = `<div class="highlight-container">${winnerHTML}${loserHTML}</div>`;
 }
 
-// Initial render
-updateLeaderboard();
-createCollapsibleSections();
-displaySeasonHighlight();
+// Initialize the page
+window.onload = function () {
+    createConfetti();
+    updateLeaderboard();
+    createCollapsibleSections();
+    displaySeasonHighlight();
+};
