@@ -58,18 +58,17 @@ function updateLeaderboard() {
     const tbody = document.getElementById('leaderboardBody');
     tbody.innerHTML = '';
 
-    // Sort players by total score
     const sortedPlayers = [...players].sort((a, b) => b.totalScore - a.totalScore);
 
     sortedPlayers.forEach(player => {
         const row = document.createElement('tr');
-        row.innerHTML = 
+        row.innerHTML = `
             <td>
                 <img src="${player.picture}" alt="${player.name}" class="player-pic">
                 ${player.name}
             </td>
             <td>${player.totalScore}</td>
-        ;
+        `;
         tbody.appendChild(row);
     });
 }
@@ -82,11 +81,13 @@ function createCollapsibleSections() {
     for (let week = 1; week <= totalWeeks; week++) {
         const button = document.createElement('button');
         button.classList.add('collapsible');
-        button.textContent = Week ${week};
+        button.textContent = `Week ${week}`;
 
         const content = document.createElement('div');
         content.classList.add('content');
-        content.innerHTML = players.map(player => <p>${player.name}: ${player.weeklyScores[week] || 0}</p>).join('');
+        content.innerHTML = players
+            .map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`)
+            .join('');
 
         button.onclick = function () {
             this.classList.toggle('active');
@@ -99,12 +100,11 @@ function createCollapsibleSections() {
     }
 }
 
-// Display season highlight (winner and loser)
+// Display season highlight
 function displaySeasonHighlight() {
     const seasonHighlightContainer = document.getElementById('season-highlight');
 
-    // Add winner
-    const winnerHTML = 
+    const winnerHTML = `
         <div class="highlight-item">
             <h3>2024 Season Winner!</h3>
             <div class="framed-pic winner">
@@ -112,10 +112,9 @@ function displaySeasonHighlight() {
             </div>
             <p>${currentSeason.winner.name}</p>
         </div>
-    ;
+    `;
 
-    // Add loser
-    const loserHTML = 
+    const loserHTML = `
         <div class="highlight-item">
             <h3>🥄 Current Wooden Spoon Holder!</h3>
             <div class="framed-pic loser">
@@ -123,15 +122,14 @@ function displaySeasonHighlight() {
             </div>
             <p>${currentSeason.loser.name}</p>
         </div>
-    ;
+    `;
 
-    // Render both winner and loser side by side
-    seasonHighlightContainer.innerHTML = 
+    seasonHighlightContainer.innerHTML = `
         <div class="highlight-container">
             ${winnerHTML}
             ${loserHTML}
         </div>
-    ;
+    `;
 }
 
 // Initial render
