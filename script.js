@@ -42,29 +42,18 @@ const players = [
     }
 ];
 
-// Hardcoded current winner and loser
-const currentSeason = {
-    winner: { name: "Matt", picture: "Assets/matt.png" },
-    loser: { name: "Ste", picture: "Assets/ste.png" }
-};
-
-// Honorary winners data
+// Honorary winners
 const honoraryWinners = [
-    { name: "Matt", year: 2024, picture: "Assets/matt.png" },
-    { name: "Gaz", year: 2023, picture: "Assets/gaz.png" },
-    { name: "Ste", year: 2022, picture: "Assets/ste.png" },
-    { name: "Jarv", year: 2021, picture: "Assets/jarv.png" },
+    { year: 2024, name: "Matt", picture: "Assets/matt.png" },
+    { year: 2023, name: "Gaz", picture: "Assets/gaz.png" },
+    { year: 2022, name: "Ste", picture: "Assets/ste.png" },
+    { year: 2021, name: "Jarv", picture: "Assets/jarv.png" }
 ];
-
-// Calculate total scores for leaderboard
-players.forEach(player => {
-    player.totalScore = Object.values(player.weeklyScores).reduce((a, b) => a + b, 0);
-});
 
 // Update leaderboard
 function updateLeaderboard() {
     const tbody = document.getElementById('leaderboardBody');
-    tbody.innerHTML = '';
+    tbody.innerHTML = ''; // Clear existing content
 
     // Sort players by total score
     const sortedPlayers = [...players].sort((a, b) => b.totalScore - a.totalScore);
@@ -85,6 +74,8 @@ function updateLeaderboard() {
 // Create collapsible weekly scores
 function createCollapsibleSections() {
     const container = document.getElementById('collapsibleScores');
+    container.innerHTML = ''; // Clear existing content
+
     const totalWeeks = 18;
 
     for (let week = 1; week <= totalWeeks; week++) {
@@ -94,11 +85,12 @@ function createCollapsibleSections() {
 
         const content = document.createElement('div');
         content.classList.add('content');
-        content.innerHTML = players.map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`).join('');
+        content.innerHTML = players
+            .map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`)
+            .join('');
 
         button.onclick = function () {
             this.classList.toggle('active');
-            const content = this.nextElementSibling;
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         };
 
@@ -107,74 +99,25 @@ function createCollapsibleSections() {
     }
 }
 
-// Display season highlight (winner and loser)
-function displaySeasonHighlight() {
-    const seasonHighlightContainer = document.getElementById('season-highlight');
-
-    // Add winner
-    const winnerHTML = `
-        <div class="highlight-item">
-            <h3>2024 Season Winner!</h3>
-            <div class="framed-pic winner">
-                <img src="${currentSeason.winner.picture}" alt="${currentSeason.winner.name}">
-            </div>
-            <p>${currentSeason.winner.name}</p>
-        </div>
-    `;
-
-    // Add loser
-    const loserHTML = `
-        <div class="highlight-item">
-            <h3>🥄 Current Wooden Spoon Holder!</h3>
-            <div class="framed-pic loser">
-                <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
-            </div>
-            <p>${currentSeason.loser.name}</p>
-        </div>
-    `;
-
-    // Render both winner and loser side by side
-    seasonHighlightContainer.innerHTML = `
-        <div class="highlight-container">
-            ${winnerHTML}
-            ${loserHTML}
-        </div>
-    `;
-}
-
 // Display honorary winners
 function displayHonoraryWinners() {
-    const container = document.querySelector('.honorary-container');
+    const container = document.getElementById('honorary-winners');
+    container.innerHTML = ''; // Clear existing content
+
     honoraryWinners.forEach(winner => {
         const winnerHTML = `
             <div class="honorary-item">
                 <div class="framed-pic">
                     <img src="${winner.picture}" alt="${winner.name}">
                 </div>
-                <div class="honorary-banner">
-                    <p>${winner.name} - ${winner.year}</p>
-                </div>
+                <p>${winner.year} - ${winner.name}</p>
             </div>
         `;
         container.innerHTML += winnerHTML;
     });
 }
 
-// Create confetti effect for honorary winners
-function createConfetti() {
-    const confettiContainer = document.getElementById('confetti-container');
-    for (let i = 0; i < 100; i++) {
-        const confetti = document.createElement('div');
-        confetti.className = 'confetti';
-        confetti.style.left = `${Math.random() * 100}%`;
-        confetti.style.animationDelay = `${Math.random() * 2}s`;
-        confettiContainer.appendChild(confetti);
-    }
-}
-
 // Initial render
 updateLeaderboard();
 createCollapsibleSections();
-displaySeasonHighlight();
 displayHonoraryWinners();
-createConfetti();
