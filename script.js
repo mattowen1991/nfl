@@ -42,6 +42,26 @@ const players = [
     }
 ];
 
+// Populate the leaderboard
+function updateLeaderboard() {
+    const tbody = document.getElementById('leaderboardBody');
+    tbody.innerHTML = '';
+
+    const sortedPlayers = [...players].sort((a, b) => b.totalScore - a.totalScore);
+
+    sortedPlayers.forEach(player => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>
+                <img src="${player.picture}" alt="${player.name}" class="player-pic">
+                ${player.name}
+            </td>
+            <td>${player.totalScore}</td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
 // Create collapsible weekly scores
 function createCollapsibleSections() {
     const container = document.getElementById('collapsibleScores');
@@ -57,7 +77,7 @@ function createCollapsibleSections() {
         const content = document.createElement('div');
         content.classList.add('content');
         content.innerHTML = players
-            .map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`)
+            .map(player => `<p>${player.name}: ${player.weeklyScores[week]}</p>`)
             .join('');
 
         // Add click functionality to toggle the scores
@@ -73,5 +93,11 @@ function createCollapsibleSections() {
     }
 }
 
+// Calculate total scores for leaderboard
+players.forEach(player => {
+    player.totalScore = Object.values(player.weeklyScores).reduce((a, b) => a + b, 0);
+});
+
 // Initial render
+updateLeaderboard();
 createCollapsibleSections();
