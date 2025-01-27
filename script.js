@@ -1,51 +1,51 @@
-// Hardcoded player data with weekly scores
+// Hardcoded player data with weekly scores reset to 0
 const players = [
     {
         name: "Matt",
         picture: "Assets/matt.png",
-        weeklyScores: { 1: 7, 2: 6, 3: 2, 4: 3, 5: 6, 6: 10, 7: 7, 8: 5, 9: 7, 10: 4, 11: 7, 12: 5, 13: 15, 14: 6, 15: 9, 16: 5, 17: 5, 18: 5 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Jarv",
         picture: "Assets/jarv.png",
-        weeklyScores: { 1: 6, 2: 4, 3: 2, 4: 5, 5: 7, 6: 10, 7: 6, 8: 5, 9: 6, 10: 5, 11: 6, 12: 5, 13: 9, 14: 6, 15: 6, 16: 5, 17: 5, 18: 5 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Gaz",
         picture: "Assets/gaz.png",
-        weeklyScores: { 1: 6, 2: 3, 3: 4, 4: 5, 5: 7, 6: 5, 7: 7, 8: 4, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 6, 15: 9, 16: 5, 17: 4, 18: 2 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Joe",
         picture: "Assets/joe.png",
-        weeklyScores: { 1: 5, 2: 1, 3: 4, 4: 4, 5: 6, 6: 7, 7: 6, 8: 5, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 5, 15: 5, 16: 5, 17: 4, 18: 4 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Ben",
         picture: "Assets/ben.png",
-        weeklyScores: { 1: 6, 2: 5, 3: 3, 4: 3, 5: 6, 6: 7, 7: 7, 8: 5, 9: 6, 10: 4, 11: 7, 12: 6, 13: 15, 14: 6, 15: 6, 16: 5, 17: 4, 18: 5 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Coley",
         picture: "Assets/coley.png",
-        weeklyScores: { 1: 4, 2: 5, 3: 3, 4: 4, 5: 4, 6: 4, 7: 5, 8: 4, 9: 4, 10: 4, 11: 6, 12: 5, 13: 9, 14: 9, 15: 9, 16: 6, 17: 3, 18: 6 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Mark",
         picture: "Assets/mark.png",
-        weeklyScores: { 1: 7, 2: 4, 3: 2, 4: 3, 5: 5, 6: 7, 7: 7, 8: 5, 9: 6, 10: 4, 11: 5, 12: 5, 13: 12, 14: 6, 15: 9, 16: 5, 17: 3, 18: 4 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     },
     {
         name: "Ste",
         picture: "Assets/ste.png",
-        weeklyScores: { 1: 5, 2: 4, 3: 3, 4: 2, 5: 5, 6: 7, 7: 7, 8: 4, 9: 5, 10: 6, 11: 5, 12: 4, 13: 11, 14: 6, 15: 6, 16: 5, 17: 4, 18: 0 }
+        weeklyScores: { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17: 0, 18: 0 }
     }
 ];
 
-// Hardcoded current winner and loser
+// Hardcoded current winner and loser reset
 const currentSeason = {
-    winner: { name: "Matt", picture: "Assets/matt.png" },
-    loser: { name: "Ste", picture: "Assets/ste.png" }
+    winner: { name: "", picture: "" },
+    loser: { name: "", picture: "" }
 };
 
 // Calculate total scores for leaderboard
@@ -103,33 +103,7 @@ function createCollapsibleSections() {
 // Display season highlight
 function displaySeasonHighlight() {
     const seasonHighlightContainer = document.getElementById('season-highlight');
-
-    const winnerHTML = `
-        <div class="highlight-item">
-            <h3>2024 Season Winner!</h3>
-            <div class="framed-pic winner">
-                <img src="${currentSeason.winner.picture}" alt="${currentSeason.winner.name}">
-            </div>
-            <p>${currentSeason.winner.name}</p>
-        </div>
-    `;
-
-    const loserHTML = `
-        <div class="highlight-item">
-            <h3>🥄 Current Wooden Spoon Holder!</h3>
-            <div class="framed-pic loser">
-                <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
-            </div>
-            <p>${currentSeason.loser.name}</p>
-        </div>
-    `;
-
-    seasonHighlightContainer.innerHTML = `
-        <div class="highlight-container">
-            ${winnerHTML}
-            ${loserHTML}
-        </div>
-    `;
+    seasonHighlightContainer.innerHTML = `<div class="highlight-container"></div>`;
 }
 
 // Initial render
