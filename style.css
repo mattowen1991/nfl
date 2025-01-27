@@ -113,40 +113,21 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
-.collapsible::before,
-.collapsible::after {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background: #101820;
-    position: absolute;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.collapsible::before {
-    left: -10px;
-}
-
-.collapsible::after {
-    right: -10px;
-}
-
 .collapsible:hover {
     background: #D9923A; /* Darker gold on hover */
-    transform: scale(1.03);
+    transform: scale(1.03); /* Slight zoom effect */
 }
 
 .content {
     display: none;
+    grid-column: span 1; /* Match button width */
     margin-top: 10px;
     background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
     border-radius: 5px;
-    width: 200px; /* Match ticket width */
     text-align: center;
+    width: 200px; /* Match ticket width */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -176,7 +157,7 @@ footer {
 }
 
 .honorary-pic {
-    width: 80px; /* Explicit size for honorary pictures */
+    width: 80px; /* Fixed size for honorary pictures */
     height: 80px;
     border: 2px solid #F2AA4C;
     border-radius: 50%;
