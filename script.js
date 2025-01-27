@@ -42,10 +42,10 @@ const players = [
     }
 ];
 
-// Hardcoded current winner and loser reset
+// Hardcoded current winner and loser
 const currentSeason = {
-    winner: { name: "", picture: "" },
-    loser: { name: "", picture: "" }
+    winner: { name: "Matt", picture: "Assets/matt.png" },
+    loser: { name: "Ste", picture: "Assets/ste.png" }
 };
 
 // Calculate total scores for leaderboard
@@ -103,7 +103,33 @@ function createCollapsibleSections() {
 // Display season highlight
 function displaySeasonHighlight() {
     const seasonHighlightContainer = document.getElementById('season-highlight');
-    seasonHighlightContainer.innerHTML = `<div class="highlight-container"></div>`;
+
+    const winnerHTML = `
+        <div class="highlight-item">
+            <h3>2024 Season Winner!</h3>
+            <div class="framed-pic winner">
+                <img src="${currentSeason.winner.picture}" alt="${currentSeason.winner.name}">
+            </div>
+            <p>${currentSeason.winner.name}</p>
+        </div>
+    `;
+
+    const loserHTML = `
+        <div class="highlight-item">
+            <h3>🥄 Current Wooden Spoon Holder!</h3>
+            <div class="framed-pic loser">
+                <img src="${currentSeason.loser.picture}" alt="${currentSeason.loser.name}">
+            </div>
+            <p>${currentSeason.loser.name}</p>
+        </div>
+    `;
+
+    seasonHighlightContainer.innerHTML = `
+        <div class="highlight-container">
+            ${winnerHTML}
+            ${loserHTML}
+        </div>
+    `;
 }
 
 // Initial render
