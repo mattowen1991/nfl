@@ -1,4 +1,4 @@
-// Hardcoded player data with weekly scores reset to 0
+// Player data with weekly scores
 const players = [
     {
         name: "Matt",
@@ -45,59 +45,43 @@ const players = [
 // Populate the leaderboard
 function updateLeaderboard() {
     const tbody = document.getElementById('leaderboardBody');
-    tbody.innerHTML = '';
+    tbody.innerHTML = players
+        .map(player => `
+            <tr>
+                <td>
+                    <img src="${player.picture}" alt="${player.name}" class="player-pic"> 
+                    ${player.name}
+                </td>
+                <td>${Object.values(player.weeklyScores).reduce((a, b) => a + b, 0)}</td>
+            </tr>
+        `)
+        .join('');
+}
 
-    const sortedPlayers = [...players].sort((a, b) => b.totalScore - a.totalScore);
-
-    sortedPlayers.forEach(player => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>
-                <img src="${player.picture}" alt="${player.name}" class="player-pic">
-                ${player.name}
-            </td>
-            <td>${player.totalScore}</td>
+// Create weekly scores list
+function createCollapsibleSections() {
+    const container = document.getElementById('collapsibleScores');
+    for (let week = 1; week <= 18; week++) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <button class="collapsible">Week ${week}</button>
+            <div class="content">
+                ${players.map(player => `<p>${player.name}: ${player.weeklyScores[week] || 0}</p>`).join('')}
+            </div>
         `;
-        tbody.appendChild(row);
+        container.appendChild(listItem);
+    }
+
+    // Add toggle functionality for collapsible buttons
+    document.querySelectorAll('.collapsible').forEach(button => {
+        button.addEventListener('click', function () {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            content.style.display = this.classList.contains('active') ? 'block' : 'none';
+        });
     });
 }
 
-// Create collapsible weekly scores
-function createCollapsibleSections() {
-    const container = document.getElementById('collapsibleScores');
-    const totalWeeks = 18;
-
-    for (let week = 1; week <= totalWeeks; week++) {
-        // Create the ticket button
-        const button = document.createElement('button');
-        button.classList.add('collapsible');
-        button.textContent = `Week ${week}`;
-
-        // Create the content container for scores
-        const content = document.createElement('div');
-        content.classList.add('content');
-        content.innerHTML = players
-            .map(player => `<p>${player.name}: ${player.weeklyScores[week]}</p>`)
-            .join('');
-
-        // Add click functionality to toggle the scores
-        button.onclick = function () {
-            this.classList.toggle('active');
-            const content = this.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        };
-
-        // Append the button and its content to the container
-        container.appendChild(button);
-        container.appendChild(content);
-    }
-}
-
-// Calculate total scores for leaderboard
-players.forEach(player => {
-    player.totalScore = Object.values(player.weeklyScores).reduce((a, b) => a + b, 0);
-});
-
-// Initial render
+// Initialize the page
 updateLeaderboard();
 createCollapsibleSections();
