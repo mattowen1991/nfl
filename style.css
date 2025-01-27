@@ -84,32 +84,55 @@ footer {
 
 /* Weekly Scores Section */
 .collapsible {
-    width: 100%;
-    background: #F2AA4C;
+    display: block;
+    width: 200px; /* Ticket width */
+    margin: 0 auto 10px; /* Centered and spaced */
+    padding: 10px 20px;
+    background: #F2AA4C; /* Ticket color */
     color: #101820;
-    cursor: pointer;
-    padding: 10px;
-    border: none;
-    text-align: center;
     font-size: 18px;
     font-weight: bold;
-    margin: 5px 0;
-    border-radius: 5px;
+    text-align: center;
+    border: 2px dashed #101820; /* Dashed border for ticket effect */
+    border-radius: 10px; /* Rounded corners for ticket */
+    cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.collapsible::before,
+.collapsible::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #101820;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.collapsible::before {
+    left: -10px;
+}
+
+.collapsible::after {
+    right: -10px;
 }
 
 .collapsible:hover {
-    background: #D9923A;
-    transform: scale(1.03);
+    background: #D9923A; /* Darker gold on hover */
+    transform: scale(1.03); /* Slight zoom on hover */
 }
 
 .content {
     display: none;
-    background: rgba(0, 0, 0, 0.7);
+    margin-top: 5px;
+    background: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 10px;
 }
 
 .content p {
@@ -118,140 +141,12 @@ footer {
 }
 
 .active + .content {
-    display: block;
-}
-
-/* Weekly Scores Container */
-#collapsibleScores {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Honorary Winners Section */
-.honorary-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.honorary-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.honorary-pic {
-    width: 80px; /* Fixed size for honorary pictures */
-    height: 80px; /* Fixed size for honorary pictures */
-    border: 2px solid #F2AA4C;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.honorary-pic img {
-    width: 100%; /* Ensure images fit within the container */
-    height: 100%;
-    object-fit: cover; /* Prevent distortion */
-}
-
-.honorary-item p {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-    margin: 0;
-}
-
-/* Highlight Section */
-.highlight-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.highlight-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.highlight-item h3 {
-    color: #F2AA4C;
-    margin-bottom: 10px;
-}
-
-.framed-pic {
-    width: 100px;
-    height: 100px;
-    border: 3px solid #F2AA4C;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.framed-pic img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.framed-pic.winner:hover {
-    transform: scale(1.1);
-    border-color: #D9923A;
-}
-
-.framed-pic.loser:hover {
-    animation: shake 0.5s ease-in-out;
-    border-color: #FF4C4C;
-}
-
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-}
-
-.highlight-item p {
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
+    display: block; /* Show scores when button is active */
 }
 
 /* Responsiveness */
 @media (max-width: 600px) {
-    main {
-        padding: 10px;
-    }
-
-    table, th, td {
-        font-size: 0.8rem;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    .highlight-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .framed-pic, .honorary-pic {
-        width: 70px;
-        height: 70px;
-    }
-
-    #collapsibleScores {
-        gap: 5px;
+    .collapsible {
+        width: 100%;
     }
 }
