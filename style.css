@@ -128,6 +128,45 @@ footer {
     gap: 10px;
 }
 
+/* Honorary Winners Section */
+.honorary-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.honorary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.honorary-pic {
+    width: 80px; /* Fixed size for honorary pictures */
+    height: 80px; /* Fixed size for honorary pictures */
+    border: 2px solid #F2AA4C;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.honorary-pic img {
+    width: 100%; /* Ensure images fit within the container */
+    height: 100%;
+    object-fit: cover; /* Prevent distortion */
+}
+
+.honorary-item p {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
 /* Highlight Section */
 .highlight-container {
     display: flex;
@@ -198,10 +237,6 @@ footer {
         font-size: 0.8rem;
     }
 
-    input, button {
-        font-size: 0.9rem;
-    }
-
     h1 {
         font-size: 1.8rem;
     }
@@ -211,9 +246,9 @@ footer {
         gap: 15px;
     }
 
-    .framed-pic {
-        width: 80px;
-        height: 80px;
+    .framed-pic, .honorary-pic {
+        width: 70px;
+        height: 70px;
     }
 
     #collapsibleScores {
