@@ -26,6 +26,11 @@ h1 {
     margin: 0;
 }
 
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+}
+
 main {
     max-width: 900px;
     margin: 20px auto;
@@ -83,10 +88,17 @@ footer {
 }
 
 /* Weekly Scores Section */
+#collapsibleScores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 tickets per row */
+    gap: 20px; /* Space between tickets */
+    justify-items: center; /* Center-align tickets */
+    padding: 20px;
+}
+
 .collapsible {
     display: block;
-    width: 200px; /* Ticket width */
-    margin: 0 auto 10px; /* Centered and spaced */
+    width: 200px;
     padding: 10px 20px;
     background: #F2AA4C; /* Ticket color */
     color: #101820;
@@ -123,16 +135,19 @@ footer {
 
 .collapsible:hover {
     background: #D9923A; /* Darker gold on hover */
-    transform: scale(1.03); /* Slight zoom on hover */
+    transform: scale(1.03);
 }
 
 .content {
     display: none;
-    margin-top: 5px;
-    background: rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
     border-radius: 5px;
+    width: 200px; /* Match ticket width */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .content p {
@@ -141,12 +156,39 @@ footer {
 }
 
 .active + .content {
-    display: block; /* Show scores when button is active */
+    display: block;
 }
 
-/* Responsiveness */
+/* Highlight Section */
+.highlight-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.highlight-item h3 {
+    color: #F2AA4C;
+    margin-bottom: 10px;
+}
+
+.framed-pic {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #F2AA4C;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
 @media (max-width: 600px) {
-    .collapsible {
-        width: 100%;
+    #collapsibleScores {
+        grid-template-columns: 1fr; /* 1 ticket per row on smaller screens */
     }
 }
