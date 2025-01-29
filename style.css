@@ -93,6 +93,7 @@ footer {
     margin: 20px auto;
 }
 
+/* Remove football emoji from all rules */
 .rules-list {
     list-style: none;
     padding-left: 0;
@@ -101,20 +102,13 @@ footer {
 .rules-list li {
     font-size: 1rem;
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 0;  /* Remove left padding */
     position: relative;
 }
 
-.rules-list li::before {
-    content: "🏈"; /* Adds football emoji before each rule */
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
-}
-
-/* Special Events Bonus (New Styling) */
+/* Keep star icons for bonus rules only */
 .rules-list .sub-rules {
-    margin-top: 8px; /* Adds space between "Special Events Bonuses:" and the sub-list */
+    margin-top: 8px; 
     padding-left: 25px;
     list-style: none;
 }
@@ -124,13 +118,6 @@ footer {
     margin-bottom: 5px;
     position: relative;
     padding-left: 25px;
-}
-
-.rules-list .sub-rules li::before {
-    content: "⭐"; /* Adds a star before special event bonuses */
-    position: absolute;
-    left: 0;
-    font-size: 1rem;
 }
 
 /* Weekly Scores Section */
