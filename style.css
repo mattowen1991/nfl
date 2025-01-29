@@ -42,6 +42,50 @@ main {
     color: white;
 }
 
+/* Game Rules Section */
+#game-rules {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-bottom: 20px; /* Adds spacing before the next section */
+}
+
+.rules-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rules-list li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.rules-list li::before {
+    content: "🏈"; /* Add football emoji before each rule */
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.rules-list ul {
+    margin-top: 5px;
+    padding-left: 25px;
+}
+
+.rules-list ul li {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.rules-list ul li::before {
+    content: "⭐"; /* Adds a star for bonus rules */
+    font-size: 1rem;
+}
+
 h2 {
     color: #F2AA4C;
     text-align: center;
