@@ -34,14 +34,6 @@ main {
     padding: 0 20px;
 }
 
-.card {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
 /* Game Rules Section */
 #game-rules {
     background: rgba(0, 0, 0, 0.85);
@@ -50,6 +42,7 @@ main {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     color: white;
     margin-bottom: 20px; /* Adds spacing before the next section */
+    border: 2px solid #F2AA4C; /* Adds a border to match the theme */
 }
 
 .rules-list {
@@ -79,11 +72,23 @@ main {
 .rules-list ul li {
     font-size: 0.95rem;
     margin-bottom: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .rules-list ul li::before {
     content: "⭐"; /* Adds a star for bonus rules */
     font-size: 1rem;
+    margin-right: 5px; /* Ensures spacing between icon and text */
+}
+
+/* Card Styling */
+.card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 h2 {
@@ -92,6 +97,7 @@ h2 {
     margin-top: 0;
 }
 
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -109,20 +115,13 @@ th {
     color: #F2AA4C;
 }
 
+/* Player Images in the Table */
 .player-pic {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
     vertical-align: middle;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #F2AA4C;
-    border-top: 3px solid #F2AA4C;
 }
 
 /* Weekly Scores Section */
@@ -276,6 +275,15 @@ footer {
     margin: 0;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #F2AA4C;
+    border-top: 3px solid #F2AA4C;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
     main {
@@ -284,10 +292,6 @@ footer {
 
     table, th, td {
         font-size: 0.8rem;
-    }
-
-    input, button {
-        font-size: 0.9rem;
     }
 
     h1 {
